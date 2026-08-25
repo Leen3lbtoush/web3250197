@@ -1,4 +1,4 @@
-
+//java script code//
 
 function closeBanner() {
     const banner = document.getElementById('welcomeBanner');
