@@ -1,1 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jordan Trip Booking</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body.ticket-page-bg { background: linear-gradient(135deg, #FAF9F5 0%, #F3E5DC 100%); }
+        .ticket-box-style { background: #FFFFFF; border-radius: 15px; box-shadow: 0 8px 20px rgba(74, 46, 27, 0.15); border-left: 8px dashed #C86D51; border-right: 8px dashed #C86D51; }
+    </style>
+</head>
+<body class="ticket-page-bg">
 
+    <div id="welcomeBanner" class="custom-welcome-banner">
+        <span>🚌 Welcome to Jordan Trip Booking! 🇯🇴</span>
+        <button onclick="closeBanner()">✕</button>
+    </div>
+
+    <h1>Jordan Trip Ticket Booking</h1>
+
+    
+    <div class="card-section" style="display: block;">
+        <div class="text-box ticket-box-style" style="padding: 25px;">
+            <h3 style="background-color: peachpuff; display: block; text-align: center; border-radius: 6px; padding: 5px;">🎫 Choose Your Destination & Preview</h3>
+            
+            
+            <div id="destinationImageContainer" style="margin: 20px 0; text-align: center; display: none;">
+                <img id="previewImage" src="" alt="Destination Preview" style="max-width: 100%; height: 220px; object-fit: cover; border-radius: 12px; border: 3px solid #C86D51; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+                <p id="imageCaption" style="margin-top: 8px; font-weight: bold; color: #4A2E1B;"></p>
+            </div>
+
+            <form id="bookingForm" style="display: flex; flex-direction: column; gap: 15px; margin-top: 15px;">
+                <div>
+                    <label for="fullName" style="font-weight: bold; color: #4A2E1B;">Full Name:</label><br>
+                    <input type="text" id="fullName" required style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #C86D51; margin-top: 5px;">
+                </div>
+
+                <div>
+                    <label for="destination" style="font-weight: bold; color: #4A2E1B;">Choose Destination:</label><br>
+                    <select id="destination" required style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #C86D51; margin-top: 5px; background: #FAF9F5;">
+                        <option value="">-- Select Jordanian Region --</option>
+                        <option value="Petra (Ma'an)">Petra (Ma'an)</option>
+                        <option value="Wadi Rum (Aqaba)">Wadi Rum (Aqaba)</option>
+                        <option value="Jerash Ruins (Jerash)">Jerash Ruins (Jerash)</option>
+                        <option value="Ajloun Forest (Ajloun)">Ajloun Forest (Ajloun)</option>
+                        <option value="Dead Sea (Balqa)">Dead Sea (Balqa)</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="tripDate" style="font-weight: bold; color: #4A2E1B;">Trip Date:</label><br>
+                    <input type="date" id="tripDate" required style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #C86D51; margin-top: 5px;">
+                </div>
+
+                <button type="submit" class="btn-governorates" style="width: 100%; margin-top: 10px;">Confirm & Book Ticket</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="ticketResult" class="content-viewer-section" style="display: none;">
+        <div class="viewer-text ticket-box-style" style="text-align: center; background: #FFFDF9; border-top: 4px solid #C86D51;">
+            <h2>🎟️ Official Trip Ticket 🇯🇴</h2>
+            <p id="ticketDetails" style="font-size: 1.2rem; line-height: 2;"></p>
+        </div>
+    </div>
+
+    
+    <div class="card-section" style="display: block; margin-top: 30px;">
+        <div class="text-box" style="background-color: #F8F3EC;">
+            <h3 style="background-color: peachpuff; display: block; text-align: center;">📋 Registered Passengers List</h3>
+            <ul id="passengerList" style="list-style-type: none; padding: 0; margin-top: 15px; font-size: 1.1rem; color: #4A2E1B;">
+                <li style="text-align: center; color: #777;">No bookings yet.</li>
+            </ul>
+        </div>
+    </div>
+
+    
+    <div class="btn-container" style="display: flex; gap: 15px; justify-content: center;">
+        <a href="index.html" class="btn-governorates">Back to Home 🏠</a>
+        <a href="page1.html" class="btn-governorates">View Governorates 🏛️</a>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
